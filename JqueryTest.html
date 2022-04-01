@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Javascript & JQuery Example</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Hello Javascript & JQuery world</h1>
+        <div>
+            <button class="ctrl-btn" id="btn1">Previous</button>
+            &nbsp;&nbsp; 
+            <button class="ctrl-btn">Next</button>
+        </div>
+        <hr/>
+        <div>
+            <button onclick="testJavascript();">Traditional Javascript Demo</button>
+            <hr />
+            <button onclick="testJQuery();">JQuery Demo</button>
+            <hr />
+            <button onclick="testModernJavascript();">Modern Javascript Demo</button>
+        </div>
+
+        <script type="text/javascript">
+            function testJavascript()
+            {
+                const buttons = document.getElementsByClassName("ctrl-btn");
+                
+                for(i in buttons)
+                {
+                    buttons[i].innerHTML = "Traditional JS Finish";
+                }
+            }
+
+            function testJQuery()
+            {
+                $("button.ctrl-btn").html("JQuery finish");
+            }
+
+            function testModernJavascript()
+            {
+                const buttons = Array.from(document.getElementsByClassName("ctrl-btn"));
+                buttons.forEach(b => b.innerHTML = "Modern JS Finish");
+            }
+        </script>
+    </body>
+</html>

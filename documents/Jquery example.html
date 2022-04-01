@@ -1,0 +1,39 @@
+
+<!-- saved from url=(0100)file:///C:/Users/avina/AppData/Local/Temp/%7BF5E2534C-98D6-44C0-AE66-EBDCB91CE923%7D/JqueryDemo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Jquery example</title>
+  <script src="./Jquery example_files/jquery.min.js.download" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+	<button class="ctrl">Previous</button>
+	<button class="ctrl">Next</button>
+	<hr>
+	<button onclick="testJavascript();">Test with Traditional Javascript</button>&nbsp;&nbsp;
+	<button onclick="testJQuery();">Test with JQuery</button>&nbsp;&nbsp;
+	<button onclick="testJavascriptModern();">Test with Modern Javascript</button>
+	
+	<script>
+		function testJavascript()
+		{
+			var buttons = document.getElementsByClassName("ctrl");
+			
+			for(i in buttons)
+			{
+				buttons[i].innerHTML = "Traditional JS Finish";
+			}
+		}
+		
+		function testJavascriptModern()
+		{
+			const buttons = Array.from(document.getElementsByClassName("ctrl"));
+			
+			buttons.forEach(b => { b.innerHTML = "Modern JS Finish" });			
+		}
+		
+		function testJQuery()
+		{
+			$( "button.ctrl" ).html("JQuery Finish");
+		}
+	</script>
+
+</body></html>
